@@ -1,0 +1,2 @@
+# blog
+Laracasts blog example
