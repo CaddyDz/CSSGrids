@@ -33,8 +33,12 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
+        $this->validate(request(), [
+          'title' => 'required',
+          'body' => 'required'
+        ]);
         Post::create(request(['title', 'body']));
         return redirect('/');
     }
