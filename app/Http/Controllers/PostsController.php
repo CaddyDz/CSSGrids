@@ -14,7 +14,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('posts.index');
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -51,7 +52,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show');
+        return view('posts.show', compact('post'));
     }
 
     /**
