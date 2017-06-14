@@ -1,0 +1,11 @@
+html {
+  direction: rtl;
+}
+
+body {
+  direction: rtl;
+}
+
+.nav-link.active:after {
+  right: 50%;
+}

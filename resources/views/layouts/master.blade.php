@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config('app.locale') }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,10 +7,14 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>{{ __('home.title') }}</title>
 
     <!-- Bootstrap core CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    @if (App::isLocale('ar'))
+      <link rel="stylesheet" href="{{ asset('css/bootstrap-rtl.css') }}">
+    @endif
     <!-- Custom styles for this template -->
     <link href="/css/app.css" rel="stylesheet">
   </head>
@@ -21,8 +25,8 @@
 
     <div class="blog-header">
       <div class="container">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+        <h1 class="blog-title">{{ __('home.header') }}</h1>
+        <p class="lead blog-description">{{ __('home.description') }}</p>
       </div>
     </div>
 
