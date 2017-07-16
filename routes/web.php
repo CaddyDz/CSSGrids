@@ -1,9 +1,5 @@
 <?php
 
-App::singleton('\blog\Billing\Stripe', function(){
-  return new \blog\Billing\Stripe(config('services.stripe.secret'));
-});
-
 Route::get('/', 'PostsController@index')->name('home');
 
 Route::get('/home', 'PostsController@index')->name('home');
