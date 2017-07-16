@@ -8,7 +8,7 @@ class Posts
 {
   protected $redis;
 
-  public function __construct(Redis $redis)
+  public function __construct(\Redis $redis)
   {
     $this->redis = $redis;
   }
