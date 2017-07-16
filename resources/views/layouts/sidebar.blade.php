@@ -7,7 +7,7 @@
     <h4>Archives</h4>
     <ol class="list-unstyled">
       @foreach ($archives as $stats)
-        <a href="{{"?month=" . $stats['month'] . "&year=" . $stats['year'] }}">
+        <a href="{{"/?month=" . $stats['month'] . "&year=" . $stats['year'] }}">
           {{ $stats['month'] . ' ' . $stats['year'] }}
         </a><br>
       @endforeach
