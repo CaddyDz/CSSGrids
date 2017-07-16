@@ -3,6 +3,7 @@
 namespace blog\Http\Controllers;
 
 use blog\Post;
+use blog\Repositories\Posts;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class PostsController extends Controller
 {
 
 
-    public function __construct()
+    public function __construct(Posts $posts)
     {
       $this->middleware('auth')->except(['index', 'show']);
     }
@@ -19,11 +20,13 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Posts $posts)
     {
-        $posts = Post::latest()
-        ->filter(request(['month', 'year']))
-        ->get();
+      dd($posts);
+      $posts = $posts->all();
+        // $posts = Post::latest()
+        // ->filter(request(['month', 'year']))
+        // ->get();
 
         return view('posts.index', compact('posts'));
     }
