@@ -3,6 +3,7 @@
 namespace blog\Http\Controllers;
 
 use Illuminate\Http\Request;
+use blog\Mail\Welcome;
 
 use blog\User;
 
@@ -31,6 +32,8 @@ class RegistrationController extends Controller
       auth()->login($user);
 
       // Redirect to the home page
+
+      \Mail::to($user)->send(new Welcome($user));
 
       return redirect()->home();
     }
