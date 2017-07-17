@@ -3,9 +3,7 @@
 namespace blog\Http\Controllers;
 
 use Illuminate\Http\Request;
-use blog\Mail\Welcome;
-
-use blog\User;
+use blog\Http\Requests\RegistrationForm;
 
 class RegistrationController extends Controller
 {
@@ -14,27 +12,9 @@ class RegistrationController extends Controller
       return view('registrations.create');
     }
 
-    public function store()
+    public function store(RegistrationForm $request)
     {
-      // Validate the data
-
-      $this->validate(request(), [
-        'name' => 'required|unique:users',
-        'email' => 'required|email|unique:users',
-        'password' => 'required|confirmed'
-      ]);
-
-      // create a user
-      $user = User::create(['name' => request('name'), 'email' => request('email'), 'password' => bcrypt(request('password'))]);
-
-      // Login
-
-      auth()->login($user);
-
-      // Redirect to the home page
-
-      \Mail::to($user)->send(new Welcome($user));
-
+      $request->persist();
       return redirect()->home();
     }
 }
