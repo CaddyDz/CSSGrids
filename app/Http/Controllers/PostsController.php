@@ -23,11 +23,7 @@ class PostsController extends Controller
     public function index(Posts $posts)
     {
       $posts = $posts->all();
-        // $posts = Post::latest()
-        // ->filter(request(['month', 'year']))
-        // ->get();
-
-        return view('posts.index', compact('posts'));
+      return view('posts.index', compact('posts'));
     }
 
     /**
@@ -53,6 +49,7 @@ class PostsController extends Controller
           'body' => 'required'
         ]);
         auth()->user()->publish(new Post(request(['title', 'body'])));
+        flash('message', 'Your post has been published');
         return redirect('/');
     }
 
