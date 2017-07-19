@@ -7,6 +7,13 @@ use blog\Http\Requests\RegistrationForm;
 
 class RegistrationController extends Controller
 {
+    protected $redirectTo = '/';
+    
+    public function __construct()
+    {
+      $this->middleware('guest');
+    }
+
     public function create()
     {
       return view('registrations.create');
