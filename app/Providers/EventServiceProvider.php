@@ -13,8 +13,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'blog\Events\Event' => [
-            'blog\Listeners\EventListener',
+        'blog\Events\ThreadCreated' => [
+            'blog\Listeners\NotifySubscribers',
+            'blog\Listeners\CheckForSpam',
         ],
     ];
 
