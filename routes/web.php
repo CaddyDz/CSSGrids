@@ -8,6 +8,8 @@ Route::get('/posts/create', 'PostsController@create');
 
 Route::get('/posts/{post}', 'PostsController@show');
 
+Route::get('/posts/tags/{tag}', 'TagsController@index');
+
 Route::post('/posts', 'PostsController@store');
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
