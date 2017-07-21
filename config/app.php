@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'ENGLISH DZ'),
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -171,12 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        blog\Providers\AppServiceProvider::class,
-        blog\Providers\AuthServiceProvider::class,
-        // blog\Providers\BroadcastServiceProvider::class,
-        blog\Providers\EventServiceProvider::class,
-        blog\Providers\RouteServiceProvider::class,
-        blog\Providers\SocialMediaServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

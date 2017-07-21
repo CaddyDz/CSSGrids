@@ -1,6 +1,6 @@
 <?php
 
-namespace blog\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,9 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'blog\Events\ThreadCreated' => [
-            'blog\Listeners\NotifySubscribers',
-            'blog\Listeners\CheckForSpam',
+        'App\Events\Event' => [
+            'App\Listeners\EventListener',
         ],
     ];
 

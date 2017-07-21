@@ -1,2 +1,3 @@
-# blog
-Laracasts blog example
+# Fresh
+
+Code Course fresh example

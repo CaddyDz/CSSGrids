@@ -1,6 +1,6 @@
 <?php
 
-namespace blog;
+namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -26,19 +26,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = bcrypt($password);
-    }
-
-    public function post()
-    {
-      return $this->hasMany(Post::class);
-    }
-
-    public function publish(Post $post)
-    {
-      $this->post()->save($post);
-    }
 }
