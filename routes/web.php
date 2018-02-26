@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    echo config('services.mailgun.secret');
+    echo config('services.mailgun.secret') . '<br>';
+    echo Config::get('services.braintree.secret');
 });
