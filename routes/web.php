@@ -1,7 +1,3 @@
 <?php
 
-Route::view('/', 'welcome');
-
-Route::get('/users/{id}/posts/{postId?}', function ($id, $postId = null) {
-    echo $id . ' ' . $postId;
-});
+Route::get('/', 'HomeController@index');
