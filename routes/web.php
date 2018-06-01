@@ -2,5 +2,9 @@
 
 Route::get('/', [
   'uses' => 'HomeController@index',
-  'as' => 'home'  
+  'as' => 'home'
+]);
+
+Route::post('/', [
+  'uses' => 'HomeController@create'
 ]);
