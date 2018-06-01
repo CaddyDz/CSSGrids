@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index($username)
+    public function index()
     {
-        return view('home.index')->withUsername($username)->with([
-          'fullName' => 'Salim Djerbouh'
-        ]);
+        return view('home.index');
     }
 }

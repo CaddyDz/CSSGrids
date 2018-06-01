@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/users/{username}', [
+Route::get('/', [
   'uses' => 'HomeController@index',
   'as' => 'home'
 ]);
