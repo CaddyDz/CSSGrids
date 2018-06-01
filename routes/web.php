@@ -1,10 +1,6 @@
 <?php
 
-Route::get('/', [
+Route::get('/users/{username}', [
   'uses' => 'HomeController@index',
   'as' => 'home'
-]);
-
-Route::post('/', [
-  'uses' => 'HomeController@create'
 ]);
