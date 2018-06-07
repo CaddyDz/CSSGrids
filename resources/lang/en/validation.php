@@ -100,8 +100,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'email' => 'That doesn\'t look right to me',
         ],
     ],
 

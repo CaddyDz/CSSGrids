@@ -10,6 +10,8 @@ class MailingController extends Controller
     {
       $this->validate($request, [
         'email' => 'required|email'
+      ], [
+        'email.required' => 'We need your :attribute.'
       ]);
       dd($request->email);
     }
