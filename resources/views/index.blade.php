@@ -1,12 +1,20 @@
-<form action="{{ route('mailing.create') }}" method="post">
-  {{-- {{ csrf_field() }} --}}
-  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-  <label for="email">
-    Email:
-    <input type="text" name="email" id="email">
-  </label>
-  <input type="submit">
-</form>
-@if ($errors->has('email'))
-  {{ $errors->first('email') }}
-@endif
+@extends('templates.default')
+
+@section('content')
+  <div class="row">
+    <div class="col-md-12">
+      <form action="{{ route('mailing.create') }}" method="post">
+        @csrf
+        <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : ''}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          @if ($errors->has('email'))
+            <div class="invalid-feedback">{{ $errors->first('email') }}</div>
+          @endif
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+@endsection
