@@ -7,7 +7,7 @@
         @csrf
         <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : ''}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="text" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : ''}}"  {!! old('email') ? 'value="' . old('email') .'"' : ''!!}>
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           @if ($errors->has('email'))
             <div class="invalid-feedback">{{ $errors->first('email') }}</div>
