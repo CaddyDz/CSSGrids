@@ -8,13 +8,12 @@ class HomeController extends Controller
 {
 		public function index()
 		{
-			return view('index');
-		}
-
-		public function second()
-		{
-			// validate
-			// insert the post
-			return redirect()->back();
+			return response()->json([
+				'posts' => [
+					['id' => 1, 'title' => 'abc'],
+					['id' => 2, 'title' => 'def'],
+					['id' => 3, 'title' => 'ghi']
+				]
+			]);
 		}
 }
