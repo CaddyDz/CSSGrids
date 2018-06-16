@@ -3,17 +3,18 @@
 namespace Fresh\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Fresh\Http\Requests\Newsletter\CreateSubscriptionFormRequest;
 
 class HomeController extends Controller
 {
 		public function index()
 		{
-				return view('index');
+			return view('index');
 		}
 
-		public function create(CreateSubscriptionFormRequest $request)
+		public function second()
 		{
-			dd('Create subscription');
+			// validate
+			// insert the post
+			return redirect()->back();
 		}
 }

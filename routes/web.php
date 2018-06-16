@@ -5,7 +5,7 @@ Route::get('/', [
 	'as' => 'home'
 ]);
 
-Route::post('newsletter', [
-	'uses' => 'HomeController@create',
-	'as' => 'newsletter.create'
+Route::post('second', [
+	'uses' => 'HomeController@second',
+	'as' => 'second'
 ]);
