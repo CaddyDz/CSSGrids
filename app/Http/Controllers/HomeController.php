@@ -9,10 +9,9 @@ class HomeController extends Controller
 {
     public function index(Request $request, Post $post)
     {
-        $newPost = new Post;
-        $newPost->title = 'A new title';
-        $newPost->body = 'A new body';
-        $newPost->save();
-        dd('Done!');
+        $postToUpdate = $post->findOrFail($request->id);
+        dd($postToUpdate);
+
+        return view('index');
     }
 }
