@@ -7,9 +7,12 @@ use Fresh\Post;
 
 class HomeController extends Controller
 {
-    public function index(Post $post)
+    public function index(Request $request, Post $post)
     {
-        $posts = $post->take(10)->get();
-        return view('index')->with('posts', $posts);
+        $newPost = new Post;
+        $newPost->title = 'A new title';
+        $newPost->body = 'A new body';
+        $newPost->save();
+        dd('Done!');
     }
 }
