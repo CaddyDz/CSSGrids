@@ -9,13 +9,8 @@ class HomeController extends Controller
 {
     public function index(Request $request, Post $post)
     {
-        $postToUpdate = $post->Where('id', '=', $request->id)->first();
-
-        $postToUpdate->title = 'This is an updated title';
-        $postToUpdate->update();
-        echo $postToUpdate->title;
-        $postToUpdate->delete();
-        dd('Done!');
+        $p = $post->orderBy('created_at', 'asc')->limit(5)->get();
+        dd($p);
         return view('index');
     }
 }
