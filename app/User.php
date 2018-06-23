@@ -27,17 +27,18 @@ class User extends Authenticatable
         'first_name', 'remember_token',
     ];
 
-    public function getFullName()
+    public function scopeActive($query)
     {
-        return $this->first_name . ' ' . $this->last_name;
-        ;
+        return $query->where('active', true);
     }
 
-    public function getFirstNameOrUsername()
+    public function scopeNotActive($query)
     {
-        if (!$this->first_name) {
-            return $this->username;
-        }
-        return $this->first_name;
+        return $query->where('active', false);
+    }
+
+    public function scopeReputationGreaterThan($query, $reputation)
+    {
+        return $query->where('reputation', '>=', $reputation);
     }
 }

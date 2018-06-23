@@ -9,8 +9,8 @@ class HomeController extends Controller
 {
     public function index(User $user)
     {
-        $user = $user->where('username', 'billy')->first();
-
-        dd($user->getFirstNameOrUsername());
+        $users = $user->active()->reputationGreaterThan(100)->get();
+        dd($users);
+        return view('index');
     }
 }
