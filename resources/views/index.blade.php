@@ -7,6 +7,9 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<h4>{{ $post->title }}</h4>
+	<p>{{ $post->body }}</p>
+	<p>{{ $post->reviewed_at->diffForHumans() }}</p>
+	<p>{{ $post->reviewed_at->format('H:i') }}</p>
 </body>
 </html>

@@ -7,10 +7,9 @@ use Fresh\Post;
 
 class HomeController extends Controller
 {
-    public function index(Request $request, Post $post)
+    public function index(Request $request, Post $posts)
     {
-        $p = $post->orderBy('created_at', 'asc')->limit(5)->get();
-        dd($p);
-        return view('index');
+        $post = $posts->find($request->id);
+        return view('index')->with('post', $post);
     }
 }

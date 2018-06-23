@@ -10,4 +10,8 @@ class Post extends Model
         'title',
         'body'
     ];
+
+    protected $dates = [
+        'reviewed_at'
+    ];
 }
