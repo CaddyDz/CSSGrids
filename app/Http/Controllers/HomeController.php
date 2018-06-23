@@ -3,13 +3,14 @@
 namespace Fresh\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Fresh\Post;
+use Fresh\User;
 
 class HomeController extends Controller
 {
-    public function index(Request $request, Post $posts)
+    public function index(User $user)
     {
-        $post = $posts->find($request->id);
-        return view('index')->with('post', $post);
+        $user = $user->where('username', 'billy')->first();
+
+        dd($user->getFirstNameOrUsername());
     }
 }
