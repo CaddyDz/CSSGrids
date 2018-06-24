@@ -13,7 +13,7 @@
 					<h4>{{ $post->title }}</h4>
 			@endforeach
 
-			{{ $posts->render() }}
+			{{ $posts->appends(Request::only('order', 'per-page'))->render() }}
 		@else
 				<p>No posts</p>
 		@endif
