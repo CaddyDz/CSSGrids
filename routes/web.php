@@ -5,7 +5,7 @@ Route::get('/', [
     'as' => 'home'
 ]);
 
-Route::get('/post/{post}', [
-    'uses' => 'PostController@get',
-    'as' => 'post.get'
+Route::get('/api/posts', [
+    'uses' => 'PostController@index',
+    'as' => 'api.posts'
 ]);

@@ -7,8 +7,8 @@ use Fresh\Post;
 
 class PostController extends Controller
 {
-    public function get(Post $post)
+    public function index(Post $post)
     {
-        dd($post);
+        return response()->json($post->get());
     }
 }

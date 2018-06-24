@@ -14,4 +14,13 @@ class Post extends Model
     protected $dates = [
         'reviewed_at'
     ];
+
+    protected $appends = [
+        'humanCreatedAt'
+    ];
+
+    public function getHumanCreatedAtAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
 }
