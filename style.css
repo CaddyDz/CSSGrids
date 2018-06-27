@@ -2,20 +2,31 @@ body {
 	margin-top: 40px;
 }
 
-#container {
-	width: 800px;
-	margin: auto;
-	background: #e3e3e3;
-
+.container {
 	display: grid;
-	grid-template-columns: 30px 10% 1fr;
-	grid-template-rows: repeat(3, 50px);
-	grid-gap: 1em;
+	grid-template-columns: repeat(4, 100px);
+	grid-gap: 10px;
 }
 
-#container > div {
-	background: #999;
-	font-weight: bold;
-	color: white;
-	font-family: sans-serif;
+.a {
+	grid-column: 3 / span 2;
+	grid-row: 3;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+}
+
+.a > .box {
+	background-color: blue;
+}
+
+.b {
+	grid-column: 3 / 5;
+}
+
+.box {
+	background-color: #444;
+	color: #fff;
+	border-radius: 2px;
+	padding: 10px;
 }
