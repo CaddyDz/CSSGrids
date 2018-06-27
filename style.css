@@ -1,32 +1,16 @@
 body {
 	margin-top: 40px;
+	padding: 0 50px;
 }
 
 .container {
+	background: #333;
 	display: grid;
-	grid-template-columns: repeat(4, 100px);
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 	grid-gap: 10px;
-}
-
-.a {
-	grid-column: 3 / span 2;
-	grid-row: 3;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 10px;
-}
-
-.a > .box {
-	background-color: blue;
-}
-
-.b {
-	grid-column: 3 / 5;
 }
 
 .box {
-	background-color: #444;
-	color: #fff;
-	border-radius: 2px;
-	padding: 10px;
+	background-color: #00b1b3;
+	padding: 50px 0;
 }
