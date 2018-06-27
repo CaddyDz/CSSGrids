@@ -3,38 +3,19 @@ body {
 }
 
 #container {
+	width: 800px;
+	margin: auto;
+	background: #e3e3e3;
+
 	display: grid;
-	grid-template-columns: 150px 100px auto;
-	grid-template-rows: 100px auto 100px;
-	grid-template-areas: 
-				"header header header"
-				"nav aside main"
-				"footer footer footer";
-	grid-gap: 10px;
+	grid-template-columns: 30px 10% 1fr;
+	grid-template-rows: repeat(3, 50px);
+	grid-gap: 1em;
 }
 
-header {
-	grid-area: header;
-	background: red;
-}
-
-nav {
-	grid-area: nav;
-	background: brown;
-}
-
-main {
-	grid-area: main;
-	background: blue;
-}
-
-aside {
-	grid-area: aside;
-	background: black;
+#container > div {
+	background: #999;
+	font-weight: bold;
 	color: white;
-}
-
-footer {
-	grid-area: footer;
-	background: brown;
+	font-family: sans-serif;
 }
