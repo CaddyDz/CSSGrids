@@ -4,18 +4,18 @@ namespace Fresh\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Fresh\Post;
-use Fresh\User;
 
 class HomeController extends Controller
 {
-    public function index(Request $request, Post $posts)
+    public function index(Post $post)
     {
-        $posts = $posts->orderBy('created_at', $this->getOrder($request))->paginate($request->get('per-page', 10));
-        return view('index')->withPosts($posts);
-    }
+        $array = [
+            ['title' => 'Abc'],
+            ['title' => 'Abc']
+        ];
 
-    protected function getOrder($request)
-    {
-        return in_array($request->order, ['desc', 'asc']) ? $request->order : 'desc';
+        $posts = collect($array);
+        dd($posts->last());
+        return view('home.index');
     }
 }
