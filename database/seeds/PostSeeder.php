@@ -1,18 +1,9 @@
 <?php
 
-use Fresh\Post;
-use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 
 class PostSeeder extends Seeder
 {
-    protected $post;
-    protected $faker;
-    public function __construct(Post $post, Faker $faker)
-    {
-        $this->post = $post;
-        $this->faker = $faker;
-    }
     /**
      * Run the database seeds.
      *
@@ -20,11 +11,8 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        foreach (range(1, 100) as $x) {
-            $this->post->create([
-                'title' => $this->faker->sentence(10),
-                'body' => $this->faker->sentence(30),
-            ]);
-        }
+        factory(Fresh\Post::class, 500)->create()->each(function ($post) {
+            $post->save();
+        });
     }
 }
